@@ -1,0 +1,15 @@
+thead {
+    background-color: #ab8f8f;
+}
+th, td {
+   border: 1px solid black;
+}
+.txt-center {
+    text-align: center;
+}
+textarea {
+    display: none;
+}
+.mrg10 {
+    margin: 10px;
+}
