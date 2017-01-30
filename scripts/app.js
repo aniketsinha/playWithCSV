@@ -17,7 +17,7 @@ function processData(resp) {
     var rowsLength = rows.length;
     var lastRow = rows[rowsLength - 1];
     var lastRowPosition = lastRow.length?(rowsLength):(rowsLength - 1);
-    titles = getArrayFromString(rows[0]);
+    titles = getArrayFromString(rows[0], ",");
     populateTableHeader();
     for(var i=1;i<lastRowPosition;i++) {
         var rowData = new dataClass(rows[i])
@@ -27,14 +27,14 @@ function processData(resp) {
 }
 
 function dataClass(rowDataAsString) {
-    var rowAsArray = getArrayFromString(rowDataAsString);
+    var rowAsArray = getArrayFromString(rowDataAsString, ",");
     for(var i=0;i<titles.length;i++) {
         this[titles[i]] = rowAsArray[i];
     }
 }
 
-function getArrayFromString(str) {
-    return str.split(",");
+function getArrayFromString(str, separator) {
+    return str.split(separator);
 }
 
 // function populateTable(titles) {
